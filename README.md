@@ -1,2 +1,2 @@
 # CKD-Diagnostic-System
-Un système intelligent de diagnostic de la Chronic Kidney Disease .
+Un système intelligent de diagnostic de la Chronic Kidney Disease basé sur l’analyse des mesures biologiques du patient ainsi que de son historique médical. Le système utilise des techniques de logique non classique (comme la logique floue) afin de gérer l’incertitude présente dans les données médicales et d’aider à améliorer la précision du diagnostic précoce tout en assistant les professionnels de santé dans la prise de décision.
