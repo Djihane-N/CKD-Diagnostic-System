@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Diagnostic System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header-card glass-card">
+            <h1 class="title">CKD Diagnostic System</h1>
+            <p class="subtitle">Système de diagnostic basé sur les logiques non-classiques</p>
+        </header>
+
+        <!-- Patient Information -->
+        <section class="patient-card glass-card">
+            <h2 class="section-title">Informations du Patient</h2>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="patientName">Nom du patient</label>
+                    <input type="text" id="patientName" placeholder="Entrez le nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="patientAge">Âge</label>
+                    <input type="number" id="patientAge" placeholder="Entrez l'âge" min="0">
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Mesures Biologiques</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="creatinine">Créatinine (mg/dL)</label>
+                    <input type="number" id="creatinine" placeholder="0.0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="gfr">DFG (mL/min/1.73m²)</label>
+                    <input type="number" id="gfr" placeholder="0.0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="albumin">Albumine (g/L)</label>
+                    <input type="number" id="albumin" placeholder="0.0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="hemoglobin">Hémoglobine (g/dL)</label>
+                    <input type="number" id="hemoglobin" placeholder="0.0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="urea">Urée (mg/dL)</label>
+                    <input type="number" id="urea" placeholder="0.0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="proteinuria">Protéinurie (g/24h)</label>
+                    <input type="number" id="proteinuria" placeholder="0.0" step="0.1">
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Antécédents Cliniques</h3>
+            <div class="checkbox-grid">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="diabetes">
+                    <span>Diabète</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="hypertension">
+                    <span>Hypertension</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="cardiovascular">
+                    <span>Maladies cardiovasculaires</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="familyHistory">
+                    <span>Antécédents familiaux</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="anemie">
+                    <span>Anémie</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="oedeme">
+                    <span>Oedème</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Logic Selection -->
+        <section class="logic-card glass-card">
+            <h2 class="section-title">Sélection de la Logique</h2>
+            <p class="section-description">Choisissez une ou plusieurs logiques pour l'analyse</p>
+
+            <div class="logic-grid">
+                <button class="logic-button" data-logic="modal">
+                    <span class="logic-icon">◇</span>
+                    <span class="logic-name">Logique Modale</span>
+                    <span class="logic-status" data-status="modal"></span>
+                </button>
+
+                <button class="logic-button" data-logic="default">
+                    <span class="logic-icon">⊢</span>
+                    <span class="logic-name">Logique par Défaut</span>
+                    <span class="logic-status" data-status="default"></span>
+                </button>
+
+                <button class="logic-button" data-logic="fuzzy">
+                    <span class="logic-icon">∼</span>
+                    <span class="logic-name">Logique Floue</span>
+                    <span class="logic-status" data-status="fuzzy"></span>
+                </button>
+
+                <button class="logic-button" data-logic="dempster">
+                    <span class="logic-icon">⊕</span>
+                    <span class="logic-name">Dempster-Shafer</span>
+                    <span class="logic-status" data-status="dempster"></span>
+                </button>
+            </div>
+
+            <button class="diagnose-button" id="diagnoseButton">
+                Lancer le Diagnostic
+            </button>
+        </section>
+
+        <!-- Results Container -->
+        <div id="resultsContainer"></div>
+
+        <!-- Comparison Table -->
+        <div id="comparisonContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
